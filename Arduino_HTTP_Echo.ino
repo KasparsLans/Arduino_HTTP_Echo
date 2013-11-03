@@ -40,7 +40,6 @@ EthernetClient client;
 // Setup routine which only runs once before loop()
 void setup() {
 
-  // Open serial communications and wait for port to open:
   // Set the data rate in bits per second (baud) for serial data transmission
   Serial.begin(9600);
 
@@ -99,6 +98,9 @@ void loop()
     // Send distance to web server
     send(distance);
   }
+  
+  // Wait one second before next loop() routine
+  delayMicroseconds(1000);
 }
 
 // Routine for sending distance to web server
